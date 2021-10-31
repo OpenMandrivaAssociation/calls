@@ -22,13 +22,15 @@ BuildRequires:	pkgconfig(folks)
 BuildRequires:	pkgconfig(mm-glib)
 BuildRequires:	pkgconfig(libfeedback-0.0)
 BuildRequires:	pkgconfig(gstreamer-1.0)
-BuildRequires:	gstreamer1-plugins-good-gtk
-BuildRequires:	sofia-sip-glib-devel
+BuildRequires:	gstreamer1.0-plugins-good
+BuildRequires:	pkgconfig(sofia-sip-ua)
+BuildRequires:	pkgconfig(sofia-sip-ua-glib)
 
 BuildRequires:	desktop-file-utils
-BuildRequires:	/usr/bin/xvfb-run
-BuildRequires:	/usr/bin/xauth
-BuildRequires:	libappstream-glib
+BuildRequires:	x11-server-xvfb
+BuildRequires:	xauth
+BuildRequires:	appstream-util
+BuildRequires:  pkgconfig(appstream-glib)
 
 Requires: hicolor-icon-theme
 
