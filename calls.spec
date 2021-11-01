@@ -15,6 +15,7 @@ BuildRequires:	pkgconfig(glib-2.0) >= 2.50.0
 BuildRequires:	pkgconfig(gtk+-3.0)
 BuildRequires:	pkgconfig(libhandy-1) >= 1.0.0
 BuildRequires:	pkgconfig(gsound)
+BuildRequires:  pkgconfig(libgdata)
 BuildRequires:	pkgconfig(libpeas-1.0)
 BuildRequires:	pkgconfig(gom-1.0)
 BuildRequires:	pkgconfig(libebook-contacts-1.2)
