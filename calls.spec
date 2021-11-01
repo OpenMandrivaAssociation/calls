@@ -2,6 +2,7 @@ Name:		calls
 Version:	41.1
 Release:	1
 Summary:	A phone dialer and call handler
+Group:		Applications/Communications
 License:	GPLv3+ and MIT
 URL:		https://gitlab.gnome.org/GNOME/calls
 Source0:	https://gitlab.gnome.org/GNOME/calls/-/archive/%{version}/%{name}-%{version}.tar.xz
