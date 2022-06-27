@@ -45,7 +45,7 @@ A phone dialer and call handler.
 %prep
 %setup -a1 -q -n %{name}-%{version}
 
-mv libcall-ui-%{libcalls_ver}/* subprojects/libcall-ui/
+mv libcall-ui-v%{libcalls_ver}/* subprojects/libcall-ui/
 
 %build
 %meson
