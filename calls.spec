@@ -53,6 +53,30 @@ mv libcall-ui-v%{libcalls_ver}/* subprojects/libcall-ui/
 
 %install
 %meson_install
+
+# Remove call-ui translations
+rm %{buildroot}%{_datadir}/locale/ca/LC_MESSAGES/call-ui.mo
+rm %{buildroot}%{_datadir}/locale/de/LC_MESSAGES/call-ui.mo
+rm %{buildroot}%{_datadir}/locale/pt_BR/LC_MESSAGES/call-ui.mo
+rm %{buildroot}%{_datadir}/locale/ro/LC_MESSAGES/call-ui.mo
+rm %{buildroot}%{_datadir}/locale/uk/LC_MESSAGES/call-ui.mo
+rm %{buildroot}%{_datadir}/locale/fa/LC_MESSAGES/call-ui.mo
+rm %{buildroot}%{_datadir}/locale/fur/LC_MESSAGES/call-ui.mo
+rm %{buildroot}%{_datadir}/locale/nl/LC_MESSAGES/call-ui.mo
+rm %{buildroot}%{_datadir}/locale/pt/LC_MESSAGES/call-ui.mo
+rm %{buildroot}%{_datadir}/locale/sv/LC_MESSAGES/call-ui.mo
+rm %{buildroot}%{_datadir}/locale/gl/LC_MESSAGES/call-ui.mo
+rm %{buildroot}%{_datadir}/locale/it/LC_MESSAGES/call-ui.mo
+rm %{buildroot}%{_datadir}/locale/sl/LC_MESSAGES/call-ui.mo
+rm %{buildroot}%{_datadir}/locale/es/LC_MESSAGES/call-ui.mo
+rm %{buildroot}%{_datadir}/locale/fi/LC_MESSAGES/call-ui.mo
+rm %{buildroot}%{_datadir}/locale/he/LC_MESSAGES/call-ui.mo
+rm %{buildroot}%{_datadir}/locale/ka/LC_MESSAGES/call-ui.mo
+rm %{buildroot}%{_datadir}/locale/oc/LC_MESSAGES/call-ui.mo
+rm %{buildroot}%{_datadir}/locale/pl/LC_MESSAGES/call-ui.mo
+rm %{buildroot}%{_datadir}/locale/sr/LC_MESSAGES/call-ui.mo
+rm %{buildroot}%{_datadir}/locale/tr/LC_MESSAGES/call-ui.mo
+
 %find_lang %{name}
 
 
