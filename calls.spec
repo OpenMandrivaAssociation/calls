@@ -1,3 +1,5 @@
+%define libcalls_ver 0.0.3
+
 Name:		calls
 Version:	42.0
 Release:	1
@@ -6,6 +8,7 @@ Group:		Applications/Communications
 License:	GPLv3+ and MIT
 URL:		https://gitlab.gnome.org/GNOME/calls
 Source0:	https://gitlab.gnome.org/GNOME/calls/-/archive/%{version}/%{name}-%{version}.tar.bz2
+Source1:  https://gitlab.gnome.org/World/Phosh/libcall-ui/-/archive/v%{libcalls_ver}/libcall-ui-v%{libcalls_ver}.tar.bz2
 
 BuildRequires:	meson
 BuildRequires:	cmake
@@ -40,7 +43,9 @@ Requires: hicolor-icon-theme
 A phone dialer and call handler.
 
 %prep
-%setup -q -n %{name}-%{version}
+%setup -a1 -q -n %{name}-%{version}
+
+mv libcall-ui-v%{libcalls_ver}/* subprojects/libcall-ui/
 
 %build
 %meson
@@ -48,6 +53,30 @@ A phone dialer and call handler.
 
 %install
 %meson_install
+
+# Remove call-ui translations
+rm %{buildroot}%{_datadir}/locale/ca/LC_MESSAGES/call-ui.mo
+rm %{buildroot}%{_datadir}/locale/de/LC_MESSAGES/call-ui.mo
+rm %{buildroot}%{_datadir}/locale/pt_BR/LC_MESSAGES/call-ui.mo
+rm %{buildroot}%{_datadir}/locale/ro/LC_MESSAGES/call-ui.mo
+rm %{buildroot}%{_datadir}/locale/uk/LC_MESSAGES/call-ui.mo
+rm %{buildroot}%{_datadir}/locale/fa/LC_MESSAGES/call-ui.mo
+rm %{buildroot}%{_datadir}/locale/fur/LC_MESSAGES/call-ui.mo
+rm %{buildroot}%{_datadir}/locale/nl/LC_MESSAGES/call-ui.mo
+rm %{buildroot}%{_datadir}/locale/pt/LC_MESSAGES/call-ui.mo
+rm %{buildroot}%{_datadir}/locale/sv/LC_MESSAGES/call-ui.mo
+rm %{buildroot}%{_datadir}/locale/gl/LC_MESSAGES/call-ui.mo
+rm %{buildroot}%{_datadir}/locale/it/LC_MESSAGES/call-ui.mo
+rm %{buildroot}%{_datadir}/locale/sl/LC_MESSAGES/call-ui.mo
+rm %{buildroot}%{_datadir}/locale/es/LC_MESSAGES/call-ui.mo
+rm %{buildroot}%{_datadir}/locale/fi/LC_MESSAGES/call-ui.mo
+rm %{buildroot}%{_datadir}/locale/he/LC_MESSAGES/call-ui.mo
+rm %{buildroot}%{_datadir}/locale/ka/LC_MESSAGES/call-ui.mo
+rm %{buildroot}%{_datadir}/locale/oc/LC_MESSAGES/call-ui.mo
+rm %{buildroot}%{_datadir}/locale/pl/LC_MESSAGES/call-ui.mo
+rm %{buildroot}%{_datadir}/locale/sr/LC_MESSAGES/call-ui.mo
+rm %{buildroot}%{_datadir}/locale/tr/LC_MESSAGES/call-ui.mo
+
 %find_lang %{name}
 
 
