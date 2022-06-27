@@ -1,3 +1,5 @@
+%define libcalls_ver 0.0.3
+
 Name:		calls
 Version:	42.0
 Release:	1
@@ -6,6 +8,7 @@ Group:		Applications/Communications
 License:	GPLv3+ and MIT
 URL:		https://gitlab.gnome.org/GNOME/calls
 Source0:	https://gitlab.gnome.org/GNOME/calls/-/archive/%{version}/%{name}-%{version}.tar.bz2
+Source1:  https://gitlab.gnome.org/World/Phosh/libcall-ui/-/archive/v%{libcalls_ver}/libcall-ui-v%{libcalls_ver}.tar.bz2
 
 BuildRequires:	meson
 BuildRequires:	cmake
@@ -40,7 +43,9 @@ Requires: hicolor-icon-theme
 A phone dialer and call handler.
 
 %prep
-%setup -q -n %{name}-%{version}
+%setup -a1 -q -n %{name}-%{version}
+
+mv libcall-ui-%{libcalls_ver}/* subprojects/libcall-ui/
 
 %build
 %meson
