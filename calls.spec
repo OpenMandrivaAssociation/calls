@@ -43,7 +43,7 @@ Requires: hicolor-icon-theme
 A phone dialer and call handler.
 
 %prep
-%setup -a1 -q -n %{name}-%{version}
+%setup -a1 -q -n %{name}-v%{version}
 
 mv libcall-ui-v%{libcalls_ver}/* subprojects/libcall-ui/
 
