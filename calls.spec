@@ -87,20 +87,6 @@ rm %{buildroot}%{_datadir}/locale/tr/LC_MESSAGES/call-ui.mo
 
 %dir %{_libdir}/calls
 %dir %{_libdir}/calls/plugins
-%dir %{_libdir}/calls/plugins/mm
-%dir %{_libdir}/calls/plugins/dummy
-%dir %{_libdir}/calls/plugins/sip
-
-%{_libdir}/calls/plugins/mm/libmm.so
-%{_libdir}/calls/plugins/mm/mm.plugin
-%{_libdir}/calls/plugins/dummy/dummy.plugin
-%{_libdir}/calls/plugins/dummy/libdummy.so
-%{_libdir}/calls/plugins/sip/libsip.so
-%{_libdir}/calls/plugins/sip/sip.plugin
-
-# ofono is retired so we exclude the plugins 4/24/2020
-%exclude %{_libdir}/calls/plugins/ofono/libofono.so
-%exclude %{_libdir}/calls/plugins/ofono/ofono.plugin
 
 %{_datadir}/glib-2.0/schemas/org.gnome.Calls.gschema.xml
 %{_datadir}/applications/org.gnome.Calls.desktop
