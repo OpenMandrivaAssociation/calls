@@ -1,13 +1,13 @@
-%define libcalls_ver 0.0.3
+%define libcalls_ver 0.0.5
 
 Name:		calls
-Version:	42.0
+Version:	43.0
 Release:	1
 Summary:	A phone dialer and call handler
 Group:		Applications/Communications
 License:	GPLv3+ and MIT
 URL:		https://gitlab.gnome.org/GNOME/calls
-Source0:	https://gitlab.gnome.org/GNOME/calls/-/archive/%{version}/%{name}-%{version}.tar.bz2
+Source0:	https://gitlab.gnome.org/GNOME/calls/-/archive/%{version}/%{name}-v%{version}.tar.bz2
 Source1:  https://gitlab.gnome.org/World/Phosh/libcall-ui/-/archive/v%{libcalls_ver}/libcall-ui-v%{libcalls_ver}.tar.bz2
 
 BuildRequires:	meson
@@ -36,6 +36,7 @@ BuildRequires:	x11-server-xvfb
 BuildRequires:	xauth
 BuildRequires:	appstream-util
 BuildRequires:  pkgconfig(appstream-glib)
+BuildRequires:  python-docutils
 
 Requires: hicolor-icon-theme
 
@@ -43,7 +44,7 @@ Requires: hicolor-icon-theme
 A phone dialer and call handler.
 
 %prep
-%setup -a1 -q -n %{name}-%{version}
+%setup -a1 -q -n %{name}-v%{version}
 
 mv libcall-ui-v%{libcalls_ver}/* subprojects/libcall-ui/
 
@@ -76,6 +77,12 @@ rm %{buildroot}%{_datadir}/locale/oc/LC_MESSAGES/call-ui.mo
 rm %{buildroot}%{_datadir}/locale/pl/LC_MESSAGES/call-ui.mo
 rm %{buildroot}%{_datadir}/locale/sr/LC_MESSAGES/call-ui.mo
 rm %{buildroot}%{_datadir}/locale/tr/LC_MESSAGES/call-ui.mo
+rm %{buildroot}%{_datadir}/locale/el/LC_MESSAGES/call-ui.mo
+rm %{buildroot}%{_datadir}/locale/fr/LC_MESSAGES/call-ui.mo
+rm %{buildroot}%{_datadir}/locale/hr/LC_MESSAGES/call-ui.mo
+rm %{buildroot}%{_datadir}/locale/ru/LC_MESSAGES/call-ui.mo
+
+
 
 %find_lang %{name}
 
@@ -85,27 +92,14 @@ rm %{buildroot}%{_datadir}/locale/tr/LC_MESSAGES/call-ui.mo
 %{_bindir}/gnome-%{name}
 
 %dir %{_libdir}/calls
-%dir %{_libdir}/calls/plugins
-%dir %{_libdir}/calls/plugins/mm
-%dir %{_libdir}/calls/plugins/dummy
-%dir %{_libdir}/calls/plugins/sip
-
-%{_libdir}/calls/plugins/mm/libmm.so
-%{_libdir}/calls/plugins/mm/mm.plugin
-%{_libdir}/calls/plugins/dummy/dummy.plugin
-%{_libdir}/calls/plugins/dummy/libdummy.so
-%{_libdir}/calls/plugins/sip/libsip.so
-%{_libdir}/calls/plugins/sip/sip.plugin
-
-# ofono is retired so we exclude the plugins 4/24/2020
-%exclude %{_libdir}/calls/plugins/ofono/libofono.so
-%exclude %{_libdir}/calls/plugins/ofono/ofono.plugin
+%{_libdir}/calls/plugins/
 
 %{_datadir}/glib-2.0/schemas/org.gnome.Calls.gschema.xml
 %{_datadir}/applications/org.gnome.Calls.desktop
 %{_datadir}/icons/hicolor/scalable/apps/org.gnome.Calls.svg
 %{_datadir}/icons/hicolor/symbolic/apps/org.gnome.Calls-symbolic.svg
 %{_datadir}/metainfo/org.gnome.Calls.metainfo.xml
-
+%{_datadir}/dbus-1/services/org.gnome.Calls.service
+%{_mandir}/man1/gnome-calls.1.*
 %doc README.md
 %license COPYING
