@@ -36,6 +36,7 @@ BuildRequires:	x11-server-xvfb
 BuildRequires:	xauth
 BuildRequires:	appstream-util
 BuildRequires:  pkgconfig(appstream-glib)
+BuildRequires:  python-docutils
 
 Requires: hicolor-icon-theme
 
