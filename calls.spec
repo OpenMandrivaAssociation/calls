@@ -77,6 +77,12 @@ rm %{buildroot}%{_datadir}/locale/oc/LC_MESSAGES/call-ui.mo
 rm %{buildroot}%{_datadir}/locale/pl/LC_MESSAGES/call-ui.mo
 rm %{buildroot}%{_datadir}/locale/sr/LC_MESSAGES/call-ui.mo
 rm %{buildroot}%{_datadir}/locale/tr/LC_MESSAGES/call-ui.mo
+rm %{buildroot}%{_datadir}/locale/el/LC_MESSAGES/call-ui.mo
+rm %{buildroot}%{_datadir}/locale/fr/LC_MESSAGES/call-ui.mo
+rm %{buildroot}%{_datadir}/locale/hr/LC_MESSAGES/call-ui.mo
+rm %{buildroot}%{_datadir}/locale/ru/LC_MESSAGES/call-ui.mo
+
+
 
 %find_lang %{name}
 
@@ -86,13 +92,14 @@ rm %{buildroot}%{_datadir}/locale/tr/LC_MESSAGES/call-ui.mo
 %{_bindir}/gnome-%{name}
 
 %dir %{_libdir}/calls
-%dir %{_libdir}/calls/plugins
+%{_libdir}/calls/plugins/
 
 %{_datadir}/glib-2.0/schemas/org.gnome.Calls.gschema.xml
 %{_datadir}/applications/org.gnome.Calls.desktop
 %{_datadir}/icons/hicolor/scalable/apps/org.gnome.Calls.svg
 %{_datadir}/icons/hicolor/symbolic/apps/org.gnome.Calls-symbolic.svg
 %{_datadir}/metainfo/org.gnome.Calls.metainfo.xml
-
+%{_datadir}/dbus-1/services/org.gnome.Calls.service
+%{_mandir}/man1/gnome-calls.1.*
 %doc README.md
 %license COPYING
