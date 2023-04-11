@@ -32,6 +32,7 @@ BuildRequires:	gstreamer1.0-plugins-good
 BuildRequires:	pkgconfig(sofia-sip-ua)
 BuildRequires:	pkgconfig(sofia-sip-ua-glib)
 BuildRequires:  pkgconfig(vapigen)
+BuildRequires:  dbus
 BuildRequires:	desktop-file-utils
 BuildRequires:	x11-server-xvfb
 BuildRequires:	xauth
