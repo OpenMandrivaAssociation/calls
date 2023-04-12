@@ -59,6 +59,10 @@ mv libcall-ui-v%{libcalls_ver}/* subprojects/libcall-ui/
 %meson_install
 
 # Remove call-ui translations
+rm %{buildroot}%{_datadir}/locale/cs/LC_MESSAGES/call-ui.mo
+rm %{buildroot}%{_datadir}/locale/eu/LC_MESSAGES/call-ui.mo
+rm %{buildroot}%{_datadir}/locale/hi/LC_MESSAGES/call-ui.mo
+rm %{buildroot}%{_datadir}/locale/hu/LC_MESSAGES/call-ui.mo
 rm %{buildroot}%{_datadir}/locale/ca/LC_MESSAGES/call-ui.mo
 rm %{buildroot}%{_datadir}/locale/de/LC_MESSAGES/call-ui.mo
 rm %{buildroot}%{_datadir}/locale/pt_BR/LC_MESSAGES/call-ui.mo
