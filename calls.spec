@@ -33,6 +33,7 @@ BuildRequires:	pkgconfig(sofia-sip-ua)
 BuildRequires:	pkgconfig(sofia-sip-ua-glib)
 BuildRequires:  pkgconfig(vapigen)
 BuildRequires:  dbus
+BuildRequires:  dbus-daemon
 BuildRequires:	desktop-file-utils
 BuildRequires:	x11-server-xvfb
 BuildRequires:	xauth
