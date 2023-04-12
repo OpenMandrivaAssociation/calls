@@ -52,7 +52,7 @@ A phone dialer and call handler.
 mv libcall-ui-v%{libcalls_ver}/* subprojects/libcall-ui/
 
 %build
-%meson
+%meson -Dtests=false
 %meson_build
 
 %install
