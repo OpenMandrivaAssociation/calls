@@ -1,7 +1,7 @@
 %define libcalls_ver 0.1.0
 
 Name:		calls
-Version:	44.0
+Version:	44.2
 Release:	1
 Summary:	A phone dialer and call handler
 Group:		Applications/Communications
