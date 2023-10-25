@@ -88,6 +88,7 @@ rm %{buildroot}%{_datadir}/locale/el/LC_MESSAGES/call-ui.mo
 rm %{buildroot}%{_datadir}/locale/fr/LC_MESSAGES/call-ui.mo
 rm %{buildroot}%{_datadir}/locale/hr/LC_MESSAGES/call-ui.mo
 rm %{buildroot}%{_datadir}/locale/ru/LC_MESSAGES/call-ui.mo
+rm %{buildroot}%{_datadir}/locale/zh_CN/LC_MESSAGES/call-ui.mo
 
 
 
