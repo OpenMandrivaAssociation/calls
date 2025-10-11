@@ -58,11 +58,12 @@ A phone dialer and call handler.
 %meson_install
 
 %find_lang %{name}
+%find_lang %{name}-ui
 
-%files -f %{name}.lang
+%files -f %{name}.lang -f %{name}-ui.lang
 %{_sysconfdir}/xdg/autostart/org.gnome.Calls-daemon.desktop
 %{_bindir}/gnome-%{name}
-
+%{_prefix}/lib/systemd/user/calls-daemon.service
 %dir %{_libdir}/calls
 %{_libdir}/calls/plugins/
 %{_datadir}/glib-2.0/schemas/org.gnome.Calls.gschema.xml
