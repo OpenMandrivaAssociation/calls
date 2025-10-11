@@ -1,19 +1,18 @@
 %define libcalls_ver 0.1.4
 
 Name:		calls
-Version:	47.0
+Version:	49.1
 Release:	1
 Summary:	A phone dialer and call handler
 Group:		Applications/Communications
 License:	GPLv3+ and MIT
 URL:		https://gitlab.gnome.org/GNOME/calls
-#Source0   https://download.gnome.org/sources/calls/43/calls-%{version}.tar.xz
-Source0:	https://gitlab.gnome.org/GNOME/calls/-/archive/%{version}/%{name}-v%{version}.tar.bz2
-Source1:  https://gitlab.gnome.org/World/Phosh/libcall-ui/-/archive/v%{libcalls_ver}/libcall-ui-v%{libcalls_ver}.tar.bz2
+Source0   https://download.gnome.org/sources/calls/49/calls-%{version}.tar.xz
+#Source0:	https://gitlab.gnome.org/GNOME/calls/-/archive/%{version}/%{name}-v%{version}.tar.bz2
+#Source1:  https://gitlab.gnome.org/World/Phosh/libcall-ui/-/archive/v%{libcalls_ver}/libcall-ui-v%{libcalls_ver}.tar.bz2
 
 BuildRequires:	meson
 BuildRequires:	cmake
-
 BuildRequires:	pkgconfig(libcallaudio-0.1)
 BuildRequires:	pkgconfig(gobject-2.0)
 BuildRequires:	pkgconfig(glib-2.0) >= 2.50.0
@@ -47,9 +46,9 @@ Requires: hicolor-icon-theme
 A phone dialer and call handler.
 
 %prep
-%setup -a1 -q -n %{name}-v%{version}
+%autosetup -n %{name}-%{version} -p1
 
-mv libcall-ui-v%{libcalls_ver}/* subprojects/libcall-ui/
+#mv libcall-ui-v%{libcalls_ver}/* subprojects/libcall-ui/
 
 %build
 %meson -Dtests=false
@@ -58,42 +57,7 @@ mv libcall-ui-v%{libcalls_ver}/* subprojects/libcall-ui/
 %install
 %meson_install
 
-# Remove call-ui translations
-rm %{buildroot}%{_datadir}/locale/cs/LC_MESSAGES/call-ui.mo
-rm %{buildroot}%{_datadir}/locale/eu/LC_MESSAGES/call-ui.mo
-rm %{buildroot}%{_datadir}/locale/hi/LC_MESSAGES/call-ui.mo
-rm %{buildroot}%{_datadir}/locale/hu/LC_MESSAGES/call-ui.mo
-rm %{buildroot}%{_datadir}/locale/ca/LC_MESSAGES/call-ui.mo
-rm %{buildroot}%{_datadir}/locale/de/LC_MESSAGES/call-ui.mo
-rm %{buildroot}%{_datadir}/locale/pt_BR/LC_MESSAGES/call-ui.mo
-rm %{buildroot}%{_datadir}/locale/ro/LC_MESSAGES/call-ui.mo
-rm %{buildroot}%{_datadir}/locale/uk/LC_MESSAGES/call-ui.mo
-rm %{buildroot}%{_datadir}/locale/fa/LC_MESSAGES/call-ui.mo
-rm %{buildroot}%{_datadir}/locale/fur/LC_MESSAGES/call-ui.mo
-rm %{buildroot}%{_datadir}/locale/nl/LC_MESSAGES/call-ui.mo
-rm %{buildroot}%{_datadir}/locale/pt/LC_MESSAGES/call-ui.mo
-rm %{buildroot}%{_datadir}/locale/sv/LC_MESSAGES/call-ui.mo
-rm %{buildroot}%{_datadir}/locale/gl/LC_MESSAGES/call-ui.mo
-rm %{buildroot}%{_datadir}/locale/it/LC_MESSAGES/call-ui.mo
-rm %{buildroot}%{_datadir}/locale/sl/LC_MESSAGES/call-ui.mo
-rm %{buildroot}%{_datadir}/locale/es/LC_MESSAGES/call-ui.mo
-rm %{buildroot}%{_datadir}/locale/fi/LC_MESSAGES/call-ui.mo
-rm %{buildroot}%{_datadir}/locale/he/LC_MESSAGES/call-ui.mo
-rm %{buildroot}%{_datadir}/locale/ka/LC_MESSAGES/call-ui.mo
-rm %{buildroot}%{_datadir}/locale/oc/LC_MESSAGES/call-ui.mo
-rm %{buildroot}%{_datadir}/locale/pl/LC_MESSAGES/call-ui.mo
-rm %{buildroot}%{_datadir}/locale/sr/LC_MESSAGES/call-ui.mo
-rm %{buildroot}%{_datadir}/locale/tr/LC_MESSAGES/call-ui.mo
-rm %{buildroot}%{_datadir}/locale/el/LC_MESSAGES/call-ui.mo
-rm %{buildroot}%{_datadir}/locale/fr/LC_MESSAGES/call-ui.mo
-rm %{buildroot}%{_datadir}/locale/hr/LC_MESSAGES/call-ui.mo
-rm %{buildroot}%{_datadir}/locale/ru/LC_MESSAGES/call-ui.mo
-rm %{buildroot}%{_datadir}/locale/zh_CN/LC_MESSAGES/call-ui.mo
-
-
-
 %find_lang %{name}
-
 
 %files -f %{name}.lang
 %{_sysconfdir}/xdg/autostart/org.gnome.Calls-daemon.desktop
@@ -101,7 +65,6 @@ rm %{buildroot}%{_datadir}/locale/zh_CN/LC_MESSAGES/call-ui.mo
 
 %dir %{_libdir}/calls
 %{_libdir}/calls/plugins/
-
 %{_datadir}/glib-2.0/schemas/org.gnome.Calls.gschema.xml
 %{_datadir}/applications/org.gnome.Calls.desktop
 %{_datadir}/icons/hicolor/scalable/apps/org.gnome.Calls.svg
