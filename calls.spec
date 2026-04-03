@@ -1,13 +1,13 @@
 %define libcalls_ver 0.1.4
 
 Name:		calls
-Version:	49.1.1
+Version:	50.0
 Release:	1
 Summary:	A phone dialer and call handler
 Group:		Applications/Communications
 License:	GPLv3+ and MIT
 URL:		https://gitlab.gnome.org/GNOME/calls
-Source0   https://download.gnome.org/sources/calls/49/calls-%{version}.tar.xz
+Source0   https://download.gnome.org/sources/calls/50/calls-%{version}.tar.xz
 #Source0:	https://gitlab.gnome.org/GNOME/calls/-/archive/%{version}/%{name}-v%{version}.tar.bz2
 #Source1:  https://gitlab.gnome.org/World/Phosh/libcall-ui/-/archive/v%{libcalls_ver}/libcall-ui-v%{libcalls_ver}.tar.bz2
 
