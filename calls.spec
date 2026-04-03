@@ -39,8 +39,10 @@ BuildRequires:	xauth
 BuildRequires:	appstream-util
 BuildRequires:  pkgconfig(appstream-glib)
 BuildRequires:  python-docutils
+BuildRequires:  pkgconfig(mobile-broadband-provider-info)
 
 Requires: hicolor-icon-theme
+Requires: mobile-broadband-provider-info
 
 %description
 A phone dialer and call handler.
